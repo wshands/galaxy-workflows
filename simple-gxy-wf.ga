@@ -1,0 +1,154 @@
+{
+    "a_galaxy_workflow": "true",
+    "annotation": "Proof of concept workflow accepting a tabular file as a single input. ",
+    "format-version": "0.1",
+    "name": "A simple one",
+    "steps": {
+        "0": {
+            "annotation": "",
+            "content_id": null,
+            "errors": null,
+            "id": 0,
+            "input_connections": {},
+            "inputs": [],
+            "label": null,
+            "name": "Input dataset",
+            "outputs": [],
+            "position": {
+                "bottom": 438.5,
+                "height": 61,
+                "left": 350.5,
+                "right": 550.5,
+                "top": 377.5,
+                "width": 200,
+                "x": 350.5,
+                "y": 377.5
+            },
+            "tool_id": null,
+            "tool_state": "{\"optional\": false}",
+            "tool_version": null,
+            "type": "data_input",
+            "uuid": "16515d28-72b2-4430-be5a-49193e504558",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "output",
+                    "uuid": "2d7a750c-9fa6-41e0-b6fa-4637fb09eea8"
+                }
+            ]
+        },
+        "1": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0",
+            "errors": null,
+            "id": 1,
+            "input_connections": {
+                "input": {
+                    "id": 0,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Advanced Cut",
+                    "name": "input"
+                }
+            ],
+            "label": null,
+            "name": "Advanced Cut",
+            "outputs": [
+                {
+                    "name": "output",
+                    "type": "tabular"
+                }
+            ],
+            "position": {
+                "bottom": 413.5,
+                "height": 92,
+                "left": 683,
+                "right": 883,
+                "top": 321.5,
+                "width": 200,
+                "x": 683,
+                "y": 321.5
+            },
+            "post_job_actions": {
+                "HideDatasetActionoutput": {
+                    "action_arguments": {},
+                    "action_type": "HideDatasetAction",
+                    "output_name": "output"
+                }
+            },
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_cut_tool/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"complement\": \"\", \"cut_type_options\": {\"cut_element\": \"-f\", \"__current_case__\": 0, \"list\": \"1\"}, \"delimiter\": \"\", \"input\": {\"__class__\": \"RuntimeValue\"}, \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "3c6318ea-8b95-4eeb-8ed4-d4248e64a30b",
+            "workflow_outputs": []
+        },
+        "2": {
+            "annotation": "",
+            "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_tail_tool/1.1.0",
+            "errors": null,
+            "id": 2,
+            "input_connections": {
+                "infile": {
+                    "id": 1,
+                    "output_name": "output"
+                }
+            },
+            "inputs": [
+                {
+                    "description": "runtime parameter for tool Select last",
+                    "name": "infile"
+                }
+            ],
+            "label": null,
+            "name": "Select last",
+            "outputs": [
+                {
+                    "name": "outfile",
+                    "type": "input"
+                }
+            ],
+            "position": {
+                "bottom": 510.5,
+                "height": 92,
+                "left": 992,
+                "right": 1192,
+                "top": 418.5,
+                "width": 200,
+                "x": 992,
+                "y": 418.5
+            },
+            "post_job_actions": {},
+            "tool_id": "toolshed.g2.bx.psu.edu/repos/bgruening/text_processing/tp_tail_tool/1.1.0",
+            "tool_shed_repository": {
+                "changeset_revision": "ddf54b12c295",
+                "name": "text_processing",
+                "owner": "bgruening",
+                "tool_shed": "toolshed.g2.bx.psu.edu"
+            },
+            "tool_state": "{\"complement\": \"\", \"infile\": {\"__class__\": \"RuntimeValue\"}, \"num_lines\": \"1\", \"__page__\": null, \"__rerun_remap_job_id__\": null}",
+            "tool_version": "1.1.0",
+            "type": "tool",
+            "uuid": "46e9b1fa-bd49-4d73-b788-e1402cee67e0",
+            "workflow_outputs": [
+                {
+                    "label": null,
+                    "output_name": "outfile",
+                    "uuid": "349bcbed-c027-4cfe-9429-fda8f16590b5"
+                }
+            ]
+        }
+    },
+    "tags": [],
+    "uuid": "0bc64bef-81ed-48e3-a3ca-560a400ac9ef",
+    "version": 1
+}
