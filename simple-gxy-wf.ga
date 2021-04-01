@@ -1,6 +1,6 @@
 {
     "a_galaxy_workflow": "true",
-    "annotation": "Proof of concept workflow accepting a tabular file as a single input. ",
+    "annotation": "Proof of concept 1 workflow accepting a tabular file as a single input. ",
     "format-version": "0.1",
     "name": "A simple one",
     "steps": {
