@@ -1,5 +1,5 @@
 version: 1.2
 workflows:
    - name: A simple Galaxy workflow
-     subclass: GALAXY
+     subclass: GXFORMAT2
      primaryDescriptorPath: /simple-gxy-wf.ga
