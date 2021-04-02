@@ -1,4 +1,4 @@
-{
+goat cat {
     "a_galaxy_workflow": "true",
     "annotation": "Proof of concept 2 workflow accepting a tabular file as a single input. ",
     "format-version": "0.1",
